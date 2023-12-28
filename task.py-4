@@ -1,0 +1,223 @@
+#1.Python Operators
+#Assignment operators
+num1=10
+num2=5
+a = num1+num2
+print(a)
+b = num1-num2
+print(b)
+c = num1*num2
+print(c)
+d = num1/num2
+print(d)
+#Unary operators
+n=4
+print(n)
+print(-n)
+n = -n
+print(n)
+#Relational operators
+a = 8
+b = 2
+print(a < b)
+print(a > b)
+print(a == b)
+print(a <= b)
+print(a >= b)
+print(a != b)
+#Logical operators
+a = 4
+b = 2
+print(a < 6 and b < 5)
+print(a < 7 or b < 1)
+x = True
+not x
+print(x)
+
+
+
+#2.Ternary Operator in Python
+x = 10 
+print("Yes" if x == 10 else "No")
+print("Yes" if x == 15 else "No")
+
+
+
+#3.Division Operators in Python
+a , b , c = 15 , 10 , 5
+print(a/b)
+print(b/c)
+print(c/a)
+
+
+
+#4.Operator Overloading in Python
+class Student: 
+
+ def __init__(self,m1,m2):
+   self.m1=m1
+   self.m2=m2
+
+ def __add__(self, other):
+  m1 = self.m1 + other.m1
+  m2 = self.m2 + other.m2
+  s3 = Student(m1 , m2)
+
+
+  return s3
+
+ def __gt__(self, other):
+  r1= self.m1 + self.m2
+  r2= other.m1 + other.m2
+  if r1 > r2:
+    return True
+  else:
+    return False
+
+
+
+s1 = Student(58,69)
+s2 = Student(60,65) 
+
+s3 = s1 + s2
+
+if s1 > s2:
+  print("s1 wins")
+else:
+  print("s2 wins")  
+
+
+
+#5.Any All in Python
+numbers = [2 , 10 , 16 , 98]
+
+even = lambda x: x % 2 == 0
+
+result = [even(number) for number in numbers]
+
+if any(result):
+   print("At least one number is even!")
+else:
+    print("No number is even!")
+if all(result):
+    print("All number are even!")
+
+
+
+#6.Operator Functions in Python | Set 1
+a = 5
+b = 4
+import operator
+print(operator .add(5,4))
+print(operator .sub(5,4))
+print(operator .mul(5,4))
+print(operator .truediv(a,b))
+print(operator .floordiv(a,b))
+print(operator .pow(a,b))
+print(operator .mod(a,b))
+print(operator .lt(a, b))
+print(operator .le(a, b))
+print(operator .eq(a, b))
+print(operator .gt(a,b))
+print(operator .ge(a,b))
+print(operator .ne(a,b))
+
+
+
+#7.Operator Functions in Python | Set 2
+#setitem(), delitem(), gettitem()
+import operator
+l =[1 , 2 , 3 , 4]
+print(l)
+operator.setitem(l , 3 , 5)
+print("After changing value at index 3" , l)
+operator.delitem(l , 3)
+print("After deleting value at index 3" , l)
+print("value at index 2:" , operator.getitem(l,2))
+#getitem() , delitem() , setitem()
+operator.setitem(l, slice(2,4),[100,101])
+print("After deleting value at index 2-3" , l)
+print("value at index 2-3:" , operator.getitem(l, slice(2,4)))
+operator.delitem(l , slice(2,4))
+print("After changing value at index 2-3" , l)
+
+#concat() , contains()
+import operator
+s1 = "i am"
+s2 = "robot"
+print("The concatenated string is :" ,operator.concat(s1,s2))
+print ()
+
+if (operator.contains(s1,s2)):
+    print("i am robot")
+else:
+    print("i am not a robot") 
+
+#and-() , or_() , xor()
+import operator
+a = 1
+b = 0
+print('a = 1')
+print('b = 0')
+print("The bitwise and of a and b is : ",operator.and_(a,b))
+print()
+print("The bitwise or of a and b is : ",operator.or_(a,b))
+print()
+print("The bitwise xor of a and b is : ",operator.xor(a,b))
+print()
+
+
+
+#8.Difference between == and is operator in Python
+# == operator
+num1=10
+num2=10
+print(num1 == num2)
+
+num1=5
+num2=3
+print(num1 == num2)
+# is operator
+num1 = 5 
+num2 = 10
+print(num1 is num2)
+
+num1=10
+num2=10
+print(num1 is num2)
+
+
+#9.Python Membership and Identity Operators
+#Membership operators
+str1 = "I am doing my work"
+print(str1)
+print("doing" in str1)
+print("now" in str1)
+print("work" in str1)
+#Identity operators
+a = 12
+b = '12'
+print(a is b)
+c = 12
+print(a is c)
+d = '10'
+print(b is d)
+
+
+#10.Python Data  | Set 3 (Strings, Lists, Tuples, Iterations 
+#strings
+str = "Mrs.Destroyer"
+st = 'a'
+print(type(str))
+#Lists
+lst = [10 , 19 , 36 , 48 , 67]
+print(type(lst))
+#Tuples
+t = (4 , 35 , 78 , 99)
+print(type(t))
+#iterations
+my_keywords = ("alpha" , "beta" , "gamma")
+keyword_list= iter(my_keywords)
+print(next(keyword_list))
+print(next(keyword_list))
+print(next(keyword_list))
